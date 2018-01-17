@@ -37,6 +37,7 @@
   revision = "fb328272929aed4cd6e5108011abe489d6e445fa"
 
 [[projects]]
+  branch = "dev"
   name = "github.com/Azure/go-autorest"
   packages = [
     "autorest",
@@ -47,8 +48,7 @@
     "autorest/utils",
     "autorest/validation"
   ]
-  revision = "6311d7a76f54cf2b6dea03d737d9bd9a6022ac5f"
-  version = "v9.7.1"
+  revision = "69f8512b63d088ea64f4394314ed48601c6eb7cc"
 
 [[projects]]
   branch = "master"
@@ -83,6 +83,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "edf076331406249c2d8c408409226b0321f2ab26b9edbf9eaafa3adb4d755ec4"
+  inputs-digest = "405ab85d196bfdc73c539af64cbf0bcde7259ceea2b1f1570a1919d19d8a9a5d"
   solver-name = "gps-cdcl"
   solver-version = 1
