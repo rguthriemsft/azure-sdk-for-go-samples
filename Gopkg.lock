@@ -8,9 +8,9 @@
   version = "1.1.3"
 
 [[projects]]
+  branch = "dev"
   name = "github.com/Azure/azure-sdk-for-go"
   packages = [
-    "profiles/latest/cognitiveservices/mgmt/cognitiveservices",
     "services/cognitiveservices/mgmt/2017-04-18/cognitiveservices",
     "services/cognitiveservices/v1.0/customsearch",
     "services/cognitiveservices/v1.0/entitysearch",
@@ -21,14 +21,14 @@
     "services/cognitiveservices/v1.0/websearch",
     "services/compute/mgmt/2017-03-30/compute",
     "services/containerinstance/mgmt/2017-08-01-preview/containerinstance",
+    "services/containerservice/mgmt/2017-09-30/containerservice",
     "services/keyvault/mgmt/2016-10-01/keyvault",
     "services/network/mgmt/2017-09-01/network",
     "services/resources/mgmt/2017-05-10/resources",
     "services/sql/mgmt/2015-05-01-preview/sql",
     "services/storage/mgmt/2017-06-01/storage"
   ]
-  revision = "934e2462aeb6e0c14186dcfeedd73a026d1b8eeb"
-  version = "v12.1.0-beta"
+  revision = "4494f695920ad731d9b976c8fe5037695798342f"
 
 [[projects]]
   branch = "master"
@@ -44,16 +44,17 @@
     "autorest/azure",
     "autorest/date",
     "autorest/to",
+    "autorest/utils",
     "autorest/validation"
   ]
-  revision = "809ed2ef5c4c9a60c3c2f3aa9cc11f3a7c2ce59d"
-  version = "v9.6.0"
+  revision = "6311d7a76f54cf2b6dea03d737d9bd9a6022ac5f"
+  version = "v9.7.1"
 
 [[projects]]
   branch = "master"
   name = "github.com/denisenkom/go-mssqldb"
   packages = ["."]
-  revision = "8a15d1bb0c8eaa4b870c016b312de5b50b493b4e"
+  revision = "df1dd7185ab5a4b98222e0852c7f057fa00f6e1c"
 
 [[projects]]
   name = "github.com/dgrijalva/jwt-go"
@@ -64,8 +65,8 @@
 [[projects]]
   name = "github.com/satori/go.uuid"
   packages = ["."]
-  revision = "879c5887cd475cd7864858769793b2ceb0d44feb"
-  version = "v1.1.0"
+  revision = "f58768cc1a7a7e77a3bd49e98cdd21419399b6a3"
+  version = "v1.2.0"
 
 [[projects]]
   name = "github.com/subosito/gotenv"
@@ -77,17 +78,11 @@
   branch = "master"
   name = "golang.org/x/crypto"
   packages = ["md4"]
-  revision = "0fcca4842a8d74bfddc2c96a073bd2a4d2a7a2e8"
-
-[[projects]]
-  branch = "master"
-  name = "golang.org/x/net"
-  packages = ["context"]
-  revision = "d866cfc389cec985d6fda2859936a575a55a3ab6"
+  revision = "13931e22f9e72ea58bb73048bc752b48c6d4d4ac"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "0fe7bf76890ffbe24e44f92bf5c403047508624fa5f420eb5420bff98345537b"
+  inputs-digest = "edf076331406249c2d8c408409226b0321f2ab26b9edbf9eaafa3adb4d755ec4"
   solver-name = "gps-cdcl"
   solver-version = 1
