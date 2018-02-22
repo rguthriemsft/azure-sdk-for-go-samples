@@ -46,6 +46,7 @@ func CreateAppServicePlan(ctx context.Context, webName string) (appserviceplan w
 				Tier:     to.StringPtr("Basic"),
 				Capacity: to.Int32Ptr(1),
 			},
+			Location: to.StringPtr(helpers.Location()),
 		},
 	)
 	if err != nil {
@@ -67,11 +68,11 @@ func CreateWebSite(ctx context.Context, webName string) (website web.Site, err e
 	webAppsClient := getAppsClient()
 	future, err := webAppsClient.CreateOrUpdate(
 		ctx,
-		"createorupdate",
+		helpers.ResourceGroupName(),
 		webName,
 		web.Site{
 			Name:           to.StringPtr(webName),
-			Location:       to.StringPtr("southcentralus"),
+			Location:       to.StringPtr(helpers.Location()),
 			Kind:           to.StringPtr("app"),
 			Type:           to.StringPtr("Microsoft.Web/sites"),
 			Tags:           tags,

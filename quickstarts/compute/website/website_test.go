@@ -18,7 +18,8 @@ import (
 )
 
 var (
-	webName               = "testthis2341now"
+	webName               = "az-samples-go-web-" + helpers.GetRandomLetterSequence(5)
+	resourceGroupName     = "canttouchthis"
 	resourceGroupLocation = "southcentralus"
 )
 
@@ -40,12 +41,14 @@ func parseArgs() error {
 
 	return nil
 }
-func ExampleCreateAppServicePlan() {
-	helpers.SetResourceGroupName("createorupdate")
+
+func ExampleCreateWebSite() {
+	helpers.SetResourceGroupName(resourceGroupName)
 	ctx := context.Background()
 	defer resources.Cleanup(ctx)
-	_, err := resources.CreateGroup(ctx, "whateves")
+	_, err := resources.CreateGroup(ctx, helpers.ResourceGroupName())
 	if err != nil {
+		helpers.PrintAndLog("Failed Web Site creation.")
 		helpers.PrintAndLog(err.Error())
 	}
 	_, err = CreateAppServicePlan(ctx, webName)
@@ -54,25 +57,16 @@ func ExampleCreateAppServicePlan() {
 		helpers.PrintAndLog(err.Error())
 	} else {
 		helpers.PrintAndLog("Created App Service Plan")
+		_, err = CreateWebSite(ctx, webName)
+		if err != nil {
+			helpers.PrintAndLog(err.Error())
+		} else {
+			helpers.PrintAndLog("Created Website")
+		}
+
 	}
 
 	// Output:
-	// created Created App Service Plan
-}
-func ExampleCreateWebSite() {
-	helpers.SetResourceGroupName("createorupdate")
-	ctx := context.Background()
-	defer resources.Cleanup(ctx)
-	_, err := resources.CreateGroup(ctx, "whateves")
-	if err != nil {
-		helpers.PrintAndLog(err.Error())
-	}
-	_, err = CreateWebSite(ctx, webName)
-	if err != nil {
-		helpers.PrintAndLog(err.Error())
-	}
-	helpers.PrintAndLog("created Website")
-
-	// Output:
-	// created Website
+	// Created App Service Plan
+	// Created Website
 }
